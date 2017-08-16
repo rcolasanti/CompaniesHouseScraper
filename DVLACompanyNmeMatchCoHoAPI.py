@@ -4,6 +4,7 @@ import requests
 import json
 import numpy as np
 import pandas as pd
+import CoHouseToken
 from difflib import SequenceMatcher
 
 
@@ -189,7 +190,7 @@ def match(company,results):
 def main(args):
     print(args[0])
     search_url ="https://api.companieshouse.gov.uk/search/companies?q="
-    token = 'r8aV3LImE29EiLrM-PUHLvhXQ8SnkmEpxjGwGCbK'
+    token = CoHouseToken.getToken()
     pw = ''
     base_url = 'https://api.companieshouse.gov.uk'
     file = args[1]
